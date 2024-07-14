@@ -31,6 +31,8 @@ python3 phishkiller.py
 ## TODO
 
     - Proxies
+    - More generators for other phishing porjects
+    - example : CC generator, wallet generator, anything to waste a phishermens time and money
 
 
  ### Disclaimer
