@@ -1,7 +1,7 @@
 import requests
 
 
-def scrape_proxies(api_url, file_name="proxies.txt"):
+def scrape_proxies(api_url, file_name="Assets/proxies.txt"):
     """
     Download the proxy list from the API endpoint and save it to a file.
     Overwrite the file if it already exists.
