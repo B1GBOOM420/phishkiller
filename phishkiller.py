@@ -32,21 +32,21 @@ def generate_random_email():
     # Generate email with combination of name and domain
     name = name_gen()
     use_number = random.choice([True, False])  # Renamed for clarity
-    
+
     # Calculate cumulative weights
     cumulative_weights = []
     total_weight = 0
     for domain, weight in weighted_email_domains:
         total_weight += weight
         cumulative_weights.append((domain, total_weight))
-    
+
     # Select domain based on cumulative weights
     random_number = random.randint(1, total_weight)
     for domain, cumulative_weight in cumulative_weights:
         if random_number <= cumulative_weight:
             selected_domain = domain
             break
-    
+
     # Generate email with or without a number
     if use_number:
         return f"{name}{random.randint(1, 100)}{selected_domain}"
@@ -82,7 +82,7 @@ def send_posts(url):
         except requests.RequestException as e:
             logging.error(f"Request failed: {e}")
             time.sleep(5)  # Wait for 5 seconds before retrying
-            
+
         except Exception as e:
             logging.error(f"An unexpected error occurred: {e}")
             time.sleep(5)  # Wait for 5 seconds before retrying
